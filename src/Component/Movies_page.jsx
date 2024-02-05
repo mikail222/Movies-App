@@ -11,37 +11,57 @@ const Movies_page = () => {
 
   useEffect(() => {
     dispatch(getPost());
-    axios
-      .get(
-        "https://api.themoviedb.org/3/discover/movie?api_key=784606060685ad3309ab36d5adb48695&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate"
-      )
-      .then((response) => setMovies(response.data));
   }, []);
-  // console.log(movies);
-  // const filterObj = Object.values(showMovies)
-  //   .filter((u) => u[1])
-  //   .map((x) => x);
-  // console.log(filterObj);
-  // console.log(Object.keys(filterObj).map((x) => x));
-  return (
-    <div className="moviesField ">
-      <div className=" flex  flex-wrap gap-[1rem] justify-center w-[100%] h-[100%] mt-8">
-        {/* {Array.isArray(showMovies) ? (
-          showMovies.map((u) => <h1>{u.original_title}</h1>)
-        ) : (
-          <h1>check out for other data type</h1>
-        )} */}
-        {/* {showMovies.results.map((u, i) => (
-          <ul className="flex flex-col w-[15rem] bg-[white] h-auto drop-shadow-md ">
-            <li key={u}>{u.title}</li>
-            <img src={u.poster_path} alt="poster" />
-          </ul>
-        ))} */}
+  console.log(showMovies);
+  const pics = showMovies.results?.map(({ backdrop_path }) => backdrop_path);
+  const BASE_URL = "https://image.tmdb.org/t/p/original/";
 
-        {JSON.stringify(movies, null, 2)}
-        <p className="flex flex-col  justify-center  items-center">
-          welcome to youtube cloned App
-        </p>
+  return (
+    <div className="moviesField mb-[5rem]">
+      <div className=" grid grid-cols-2 gap-[1rem] w-[100%] h-[100%] ">
+        {showMovies &&
+          showMovies.results?.map(
+            ({
+              backdrop_path,
+              title,
+              release_date,
+              vote_count,
+              poster_path,
+              id,
+            }) => (
+              <ul
+                className="flex flex-col w-[100%] h-auto drop-shadow-md "
+                key={id}
+              >
+                <img
+                  src={
+                    `${BASE_URL}${backdrop_path}` || `${BASE_URL}${poster_path}`
+                  }
+                  alt="poster"
+                  className="w-[100%] lg:h-[50vh] object-cover  rounded-[10px]"
+                />
+                <div className=" my-[3%] flex flex-row items-center gap-[2%]">
+                  <img
+                    src={`${BASE_URL}${poster_path}`}
+                    alt=""
+                    className="w-[55px] h-[55px] object-cover rounded-[65px]"
+                  />
+                  <div className=" gap-[6%]">
+                    <h3>{title}</h3>
+                    <p>
+                      views {vote_count}k .{release_date}
+                    </p>
+                  </div>
+                </div>
+              </ul>
+            )
+          )}
+
+        {/* {showMovies && (
+          <p className="flex flex-col  justify-center  items-center">
+            welcome to youtube cloned App
+          </p>
+        )} */}
       </div>
     </div>
   );

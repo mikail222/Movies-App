@@ -1,21 +1,20 @@
-.App {
-}
 .dashboard {
   position: fixed;
-  /* width: 15vw; */
   display: flex;
-  margin-top: 4.2rem;
+  /* @apply bg-white z-[2]; */
 }
-.dashboardList div {
-  border-radius: 15px 15px;
-  margin-left: 1rem;
+.iconBar {
+  margin-top: 0.6rem;
+  @apply flex flex-col items-center;
 }
+
 .main {
   display: flex;
   flex-direction: column;
-  width: 80%;
-  height: 100vh;
-  margin-left: 15rem;
+  align-items: center;
+  width: 95%;
+  height: 100%;
+  @apply px-[2%];
 }
 .row {
   display: flex;
@@ -28,32 +27,27 @@
   padding: 0px 10px;
 }
 .menu_bar {
-  position: fixed;
+  /* position: relative; */
   display: flex;
   flex-direction: row;
   place-items: center;
   overflow-x: auto;
-  width: 80vw;
-  /* -ms-overflow-style: none;
-  scrollbar-width: none; */
+  align-items: center;
   gap: 0.75rem;
-  padding: 0.75rem;
-  margin-top: 3.7rem;
 }
 .menu_bar::-webkit-scrollbar {
   display: none;
 }
 .each_bar {
   background-color: #f2f2f2;
-  padding: 3px 16px;
-  font-size: 0.95rem;
+  padding: 6px 16px;
+  font-size: 1.2rem;
   border: 1px solid transparent;
   border-radius: 10px;
 }
 .moviesField {
   height: 100vh;
   background-color: #f9f9f9;
-  margin-top: 7.5rem;
   overflow-x: hidden;
 }
 .moviesField::-webkit-scrollbar {
@@ -61,11 +55,31 @@
 }
 .search {
   border: 1px solid lightgrey;
-  border-radius: 0px 20px 20px 0px;
+  border-radius: 0px 50px 50px 0px;
+  background-color: #f9f9f9;
 }
 input {
-  border-radius: 20px 0px 0px 20px;
+  border-radius: 50px 0px 0px 50px;
 }
 .voice:hover {
   background-color: lightgray;
+}
+.arrow {
+  @apply bg-white w-[35px] h-[35px] rounded-[53px] cursor-pointer relative z-[1] hover:bg-[#f2f2f2] p-[5px];
+}
+.bar {
+  @apply flex flex-col justify-center items-center w-[100%] mx-[5px];
+}
+.bar div {
+  @apply flex flex-col justify-center items-center hover:bg-[lightgray] w-[100%] h-[5.5rem] rounded-[15px] px-[5px];
+}
+.bar .icon {
+  @apply w-[25px] h-[25px];
+}
+.bar div p {
+  @apply text-[.75rem];
+}
+.overlay {
+  background-color: rgb(0, 0, 0, 0.6);
+  @apply z-[1];
 }

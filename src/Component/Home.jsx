@@ -1,18 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import DashBoard from "./DashBoard";
 import Header from "./Header";
 import Menu_bar from "./Menu_bar";
 import Movies_page from "./Movies_page";
+import Sidebar_icon from "./Sidebar_icon";
 
 const Home = () => {
+  const [toggleSideBar, setToggleSideBAr] = useState(false);
+
   return (
-    <div className="parentDiv">
+    <div className="fixed">
+      {toggleSideBar === true && (
+        <aside className="dashboard">
+          <div className="overlay w-[100vw] h-[100vh] z-[1]">
+            {toggleSideBar === true && <DashBoard />}
+          </div>
+        </aside>
+      )}
       <div className="App">
-        <Header />
+        <Header setToggleSideBAr={setToggleSideBAr} />
         <header className="head"></header>
         <div className="row">
-          <aside className="dashboard">
-            <DashBoard />
+          <aside className="iconBar">
+            <Sidebar_icon />
           </aside>
           <main className="main">
             <Menu_bar />
