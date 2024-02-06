@@ -6,18 +6,18 @@ import { IoIosNotificationsOutline } from "react-icons/io";
 import { BiVideoPlus } from "react-icons/bi";
 import { RiYoutubeFill } from "react-icons/ri";
 
-const Header = ({ setToggleSidebar }) => {
+const Header = ({ setToggleSideBAr }) => {
   return (
     <div className="hidden lg:flex flex-row justify-around items-center w-[100%] my-[6px]">
       <div className="flex flex-row justify-around items-center w-[80%]">
         <div className="flex flex-row justify-around items-center">
           <div
             className="voice  w-[2.5rem] h-[38px]  rounded-[80%] flex flex-col justify-center items-center cursor-pointer"
-            onClick={() => setToggleSidebar(true)}
+            onClick={() => setToggleSideBAr(true)}
           >
             <AiOutlineMenu className="w-[35px] h-[25px]" />
           </div>
-          <div className="flex flex-row justify-center w-[15vw]">
+          <div className="flex flex-row justify-center w-[15vw] cursor-pointer">
             <div className=" w-[60%] flex flex-row justify-start items-center">
               <RiYoutubeFill className="fill-[red]  w-[45px] h-[45px]" />
               <p className="font-[Oswald] text-[1.75rem]">YouTube</p>
@@ -43,14 +43,14 @@ const Header = ({ setToggleSidebar }) => {
           </div>
         </form>
 
-        <div className="voice  w-[50px] h-[50px] bg-[#e5e7eb] rounded-[80px] flex flex-col justify-center items-center">
+        <div className="voice  w-[50px] h-[50px] bg-[#e5e7eb] rounded-[80px] flex flex-col justify-center items-center cursor-pointer">
           <MdKeyboardVoice className="w-[25px] h-[25px]" />
         </div>
       </div>
       <div className="flex flex-row justify-between items-center w-[10%]">
-        <BiVideoPlus className="w-[35px] h-[25px]" />
-        <IoIosNotificationsOutline className="w-[35px] h-[35px]" />
-        <div className="w-[2.5rem] h-[38px] bg-[green] flex flex-col justify-center items-center rounded-[100px] text-white">
+        <BiVideoPlus className="w-[35px] h-[25px] cursor-pointer" />
+        <IoIosNotificationsOutline className="w-[35px] h-[35px] cursor-pointer" />
+        <div className="w-[2.5rem] h-[38px] bg-[green] flex flex-col justify-center items-center rounded-[100px] text-white cursor-pointer">
           <h3>M</h3>
         </div>
       </div>

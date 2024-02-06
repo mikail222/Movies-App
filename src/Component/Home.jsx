@@ -7,14 +7,16 @@ import Sidebar_icon from "./Sidebar_icon";
 import Mobile_head from "./Mobile_head";
 
 const Home = () => {
-  const [toggleSideBar, setToggleSideBAr] = useState(false);
+  const [toggleSideBar, setToggleSideBAr] = useState(true);
 
   return (
     <div className="lg:fixed">
       {toggleSideBar === true && (
         <aside className="dashboard hidden lg:flex">
           <div className="overlay w-[100vw] h-[100vh] z-[1]">
-            {toggleSideBar === true && <DashBoard />}
+            {toggleSideBar === true && (
+              <DashBoard setToggleSideBAr={setToggleSideBAr} />
+            )}
           </div>
         </aside>
       )}
@@ -24,7 +26,7 @@ const Home = () => {
         <header className="head"></header>
         <div className="row">
           <aside className="iconBar">
-            {toggleSideBar === false && <Sidebar_icon />}
+            {toggleSideBar == false && <Sidebar_icon />}
           </aside>
           <main className="main">
             <Menu_bar />

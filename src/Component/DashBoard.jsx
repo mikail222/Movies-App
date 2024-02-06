@@ -1,30 +1,41 @@
 import React from "react";
-import { MdHomeFilled } from "react-icons/md";
+import { MdHomeFilled, MdKeyboardArrowRight } from "react-icons/md";
 import { MdOutlineSubscriptions } from "react-icons/md";
 import { MdOutlineVideoLibrary } from "react-icons/md";
 // import { SiYoutubeshorts } from "react-icons/si";
-import { RiHistoryFill } from "react-icons/ri";
+import { RiHistoryFill, RiYoutubeFill } from "react-icons/ri";
 import { MdOutlineWatchLater } from "react-icons/md";
 import { CgPlayList } from "react-icons/cg";
 import { MdOutlineExpandMore } from "react-icons/md";
 import { RiVideoLine } from "react-icons/ri";
+import { AiOutlineMenu } from "react-icons/ai";
 
-const DashBoard = () => {
+const DashBoard = ({ setToggleSideBAr }) => {
   return (
-    <div className="cursor-pointer  w-[16%] h-[100vh] z-[2] bg-white ">
-      <div className="bg-gray-200 flex flex-wrap w-[16vw] p-[0.5rem] hover:bg-gray-200">
-        <MdHomeFilled className="w-[25px] h-[25px] " />
-        <p className="text-center ml-[1.5rem]">Home</p>
+    <div className="cursor-pointer  w-[22%] h-[100vh] z-[2] bg-white relative overflow-auto">
+      <div className="flex flex-row justify-evenly items-center my-[5%] px-[10%]">
+        <div
+          className="voice rounded-[60px] p-[5px]"
+          onClick={() => setToggleSideBAr(false)}
+        >
+          <AiOutlineMenu className="w-[35px] h-[25px]" />
+        </div>
+        <div className="flex flex-row justify-center w-[15vw]">
+          <div className="flex flex-row justify-start items-center">
+            <RiYoutubeFill className="fill-[red]  w-[45px] h-[45px]" />
+            <p className="font-[Oswald] text-[1.75rem]">YouTube</p>
+          </div>
+          <p className="text-[0.65rem] text-[gray]  font-semibold font-sans">
+            NG
+          </p>
+        </div>
       </div>
-      {/* <div className=" flex flex-wrap w-[16vw] p-[0.5rem] hover:bg-gray-200">
-        <img
-          className="w-[1.5rem] ml-[2rem] rounded-[100%]"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8xF0P3WZlwtzDKR4LR6RkwTggR4BUETG1Cg&usqp=CAU"
-          alt=""
-        />
-        <p className="ml-[1rem]">Explore</p>
-      </div> */}
-      <div className="flex flex-wrap w-[16vw] p-[0.5rem]  gap-[5%] hover:bg-gray-200">
+      <div className="bg-gray-200 divList mt-[10%]">
+        <MdHomeFilled className="w-[25px] h-[25px] " />
+        <p>Home</p>
+      </div>
+
+      <div className="divList">
         {/* <SiYoutubeshorts className="w-[25px] h-[25px] " /> */}
 
         <img
@@ -33,36 +44,40 @@ const DashBoard = () => {
           alt=""
         />
 
-        <p className="ml-[1rem]">shorts</p>
+        <p>shorts</p>
       </div>
-      <div className="flex flex-wrap w-[16vw] p-[0.5rem] hover:bg-gray-200">
+      <div className="divList">
         <MdOutlineSubscriptions className="w-[25px] h-[25px] " />
-        <p className="ml-[1.5rem]">Subscription</p>
+        <p>Subscription</p>
       </div>
       <p className="border-b mt-2"></p>
-      <div className=" flex flex-wrap w-[16vw] p-[0.5rem] hover:bg-gray-200">
+      <div className="divList">
+        <p className="font-bold font-sans">YOU</p>
+        <MdKeyboardArrowRight className="w-[25px] h-[22px]" />
+      </div>
+      <div className="divList">
         <MdOutlineVideoLibrary className="w-[25px] h-[25px] " />
-        <p className="ml-[1.5rem]">Libery</p>
+        <p>Libery</p>
       </div>
-      <div className=" flex flex-wrap w-[16vw] p-[0.5rem] hover:bg-gray-200">
+      <div className="divList">
         <RiHistoryFill className="w-[25px] h-[22px] " />
-        <p className="ml-[1.5rem]">History</p>
+        <p>History</p>
       </div>
-      <div className=" flex flex-wrap w-[16vw] p-[0.5rem] hover:bg-gray-200">
+      <div className="divList">
         <RiVideoLine className="w-[25px] h-[25px] " />
-        <p className="ml-[1.5rem]">Your videos</p>
+        <p>Your videos</p>
       </div>
-      <div className=" flex flex-wrap w-[16vw] p-[0.5rem] hover:bg-gray-200">
+      <div className="divList">
         <MdOutlineWatchLater className="w-[25px] h-[23px] " />
-        <p className="ml-[1.5rem]">Watch later</p>
+        <p>Watch later</p>
       </div>
-      <div className=" flex flex-wrap w-[16vw] p-[0.5rem] hover:bg-gray-200">
+      <div className="divList">
         <CgPlayList className="w-[30px] h-[25px] " />
-        <p className="ml-[1.5rem]">play</p>
+        <p>play</p>
       </div>
-      <div className=" flex flex-wrap w-[16vw] p-[0.5rem] hover:bg-gray-200">
+      <div className="divList">
         <MdOutlineExpandMore className="w-[25px] h-[25px] " />
-        <p className="ml-[1.5rem]">Show more</p>
+        <p>Show more</p>
       </div>
       <p className="border-b mt-2 relative"></p>
     </div>
