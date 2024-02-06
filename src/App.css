@@ -12,9 +12,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 95%;
   height: 100%;
-  @apply px-[2%];
+  @apply px-[2%] w-[100%] lg:w-[95%];
 }
 .row {
   display: flex;
@@ -27,7 +26,6 @@
   padding: 0px 10px;
 }
 .menu_bar {
-  /* position: relative; */
   display: flex;
   flex-direction: row;
   place-items: center;
@@ -40,18 +38,20 @@
 }
 .each_bar {
   background-color: #f2f2f2;
-  padding: 6px 16px;
   font-size: 1.2rem;
   border: 1px solid transparent;
   border-radius: 10px;
+  @apply text-[1rem] px-[16px] lg:py-[6px] py-[3px]  cursor-pointer;
 }
 .moviesField {
   height: 100vh;
-  background-color: #f9f9f9;
   overflow-x: hidden;
 }
 .moviesField::-webkit-scrollbar {
   display: none;
+}
+.moviesField .div {
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-[1rem] w-[100%] h-[100%];
 }
 .search {
   border: 1px solid lightgrey;
@@ -65,10 +65,10 @@ input {
   background-color: lightgray;
 }
 .arrow {
-  @apply bg-white w-[35px] h-[35px] rounded-[53px] cursor-pointer relative z-[1] hover:bg-[#f2f2f2] p-[5px];
+  @apply bg-white w-[35px] h-[35px] rounded-[53px] cursor-pointer relative z-[1] hover:bg-[#f2f2f2] p-[5px] hidden lg:flex;
 }
 .bar {
-  @apply flex flex-col justify-center items-center w-[100%] mx-[5px];
+  @apply lg:flex flex-col justify-center items-center w-[100%] mx-[5px]  hidden;
 }
 .bar div {
   @apply flex flex-col justify-center items-center hover:bg-[lightgray] w-[100%] h-[5.5rem] rounded-[15px] px-[5px];

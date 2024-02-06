@@ -7,7 +7,7 @@ import { BiVideoPlus } from "react-icons/bi";
 
 const Header = ({ setToggleSidebar }) => {
   return (
-    <div className="flex flex-row justify-around items-center w-[100%] my-[6px]">
+    <div className="hidden lg:flex flex-row justify-around items-center w-[100%] my-[6px]">
       <div className="flex flex-row justify-around items-center w-[80%]">
         <div className="flex flex-row justify-around items-center">
           <div

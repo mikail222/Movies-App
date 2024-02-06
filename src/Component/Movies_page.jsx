@@ -17,8 +17,8 @@ const Movies_page = () => {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
 
   return (
-    <div className="moviesField mb-[5rem]">
-      <div className=" grid grid-cols-2 gap-[1rem] w-[100%] h-[100%] ">
+    <div className="moviesField mb-[5rem] w-[100%]">
+      <div className="div">
         {showMovies &&
           showMovies.results?.map(
             ({
@@ -38,18 +38,18 @@ const Movies_page = () => {
                     `${BASE_URL}${backdrop_path}` || `${BASE_URL}${poster_path}`
                   }
                   alt="poster"
-                  className="w-[100%] lg:h-[50vh] object-cover  rounded-[10px]"
+                  className="w-[100%] lg:h-[50vh] object-cover  lg:rounded-[10px]"
                 />
-                <div className=" my-[3%] flex flex-row items-center gap-[2%]">
+                <div className="w-[100%] my-[3%] flex flex-row items-center gap-[2%]">
                   <img
                     src={`${BASE_URL}${poster_path}`}
                     alt=""
                     className="w-[55px] h-[55px] object-cover rounded-[65px]"
                   />
-                  <div className=" gap-[6%]">
+                  <div className="gap-[6%]">
                     <h3>{title}</h3>
                     <p>
-                      views {vote_count}k .{release_date}
+                      {vote_count}k views .{release_date}
                     </p>
                   </div>
                 </div>

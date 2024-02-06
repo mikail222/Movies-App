@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MdKeyboardArrowLeft } from "react-icons/md";
+import { MdExplore, MdKeyboardArrowLeft } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
 const Menu_bar = () => {
@@ -37,8 +37,14 @@ const Menu_bar = () => {
   return (
     <div className="flex flex-row justify-center items-center my-[2%] gap-[.5rem]">
       <MdKeyboardArrowLeft onClick={(e) => pre(e)} className="arrow" />
-      <div className="menu_bar lg:w-[80vw]">
-        <p className="each_bar bg-[black] text-white  cursor-pointer">All</p>
+      <div className="menu_bar lg:w-[80vw] w-[100vw]  px-[3%]">
+        {/* <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8xF0P3WZlwtzDKR4LR6RkwTggR4BUETG1Cg&usqp=CAU"
+          alt=""
+          className="lg:hidden flex w-[52px] h-[35px] object-cover each_bar"
+        /> */}
+        <MdExplore className="lg:hidden w-[52px] h-[35px] each_bar" />
+        <p className="each_bar bg-[black] text-white ">All</p>
         {menu.map(({ name }, i) => (
           <p className="each_bar cursor-pointer" key={i}>
             {name}
