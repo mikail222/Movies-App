@@ -11,7 +11,7 @@ import { RiVideoLine } from "react-icons/ri";
 
 const DashBoard = () => {
   return (
-    <div className="cursor-pointer  w-[16%] h-[100vh] z-[2] bg-white">
+    <div className="cursor-pointer  w-[16%] h-[100vh] z-[2] bg-white ">
       <div className="bg-gray-200 flex flex-wrap w-[16vw] p-[0.5rem] hover:bg-gray-200">
         <MdHomeFilled className="w-[25px] h-[25px] " />
         <p className="text-center ml-[1.5rem]">Home</p>

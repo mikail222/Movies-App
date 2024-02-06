@@ -17,7 +17,7 @@ const Movies_page = () => {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
 
   return (
-    <div className="moviesField mb-[5rem] w-[100%]">
+    <div className="moviesField lg:mb-[5rem]  mb-[2.6rem] w-[100%]">
       <div className="div">
         {showMovies &&
           showMovies.results?.map(
@@ -38,7 +38,7 @@ const Movies_page = () => {
                     `${BASE_URL}${backdrop_path}` || `${BASE_URL}${poster_path}`
                   }
                   alt="poster"
-                  className="w-[100%] lg:h-[50vh] object-cover  lg:rounded-[10px]"
+                  className="w-[100%] lg:h-[50vh] object-cover  lg:rounded-[10px] hover:rounded-none"
                 />
                 <div className="w-[100%] my-[3%] flex flex-row items-center gap-[2%]">
                   <img

@@ -10,9 +10,9 @@ const Home = () => {
   const [toggleSideBar, setToggleSideBAr] = useState(false);
 
   return (
-    <div className="">
+    <div className="lg:fixed">
       {toggleSideBar === true && (
-        <aside className="dashboard">
+        <aside className="dashboard hidden lg:flex">
           <div className="overlay w-[100vw] h-[100vh] z-[1]">
             {toggleSideBar === true && <DashBoard />}
           </div>
@@ -24,11 +24,14 @@ const Home = () => {
         <header className="head"></header>
         <div className="row">
           <aside className="iconBar">
-            <Sidebar_icon />
+            {toggleSideBar === false && <Sidebar_icon />}
           </aside>
           <main className="main">
             <Menu_bar />
             <Movies_page />
+            <div className="lg:hidden flex">
+              <Sidebar_icon />
+            </div>
           </main>
         </div>
       </div>

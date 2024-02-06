@@ -5,7 +5,7 @@
 }
 .iconBar {
   margin-top: 0.6rem;
-  @apply flex flex-col items-center;
+  @apply hidden lg:flex flex-col items-center;
 }
 
 .main {
@@ -68,16 +68,19 @@ input {
   @apply bg-white w-[35px] h-[35px] rounded-[53px] cursor-pointer relative z-[1] hover:bg-[#f2f2f2] p-[5px] hidden lg:flex;
 }
 .bar {
-  @apply lg:flex flex-col justify-center items-center w-[100%] mx-[5px]  hidden;
+  @apply flex flex-row justify-around bg-white lg:flex-col lg:justify-center items-center lg:w-[100%] w-[100vw] mx-[5px] fixed bottom-0 left-[0]  lg:relative pt-[5px];
 }
 .bar div {
-  @apply flex flex-col justify-center items-center hover:bg-[lightgray] w-[100%] h-[5.5rem] rounded-[15px] px-[5px];
+  @apply flex flex-col justify-center items-center lg:hover:bg-[lightgray] w-[100%] lg:h-[5.5rem] rounded-[15px] px-[5px];
+}
+.bar div:nth-child(5) {
+  @apply lg:flex hidden;
 }
 .bar .icon {
-  @apply w-[25px] h-[25px];
+  @apply w-[20px] h-[20px] lg:w-[25px] lg:h-[25px];
 }
 .bar div p {
-  @apply text-[.75rem];
+  @apply text-[.65rem] lg:text-[.75rem];
 }
 .overlay {
   background-color: rgb(0, 0, 0, 0.6);
